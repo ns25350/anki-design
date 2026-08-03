@@ -24,8 +24,7 @@ function setCardSide(showAnswer) {
   exampleList.setAttribute("aria-hidden", String(!showAnswer));
 
   cardSideButtons.forEach((button) => {
-    const isActive =
-      button.dataset.cardSide === (showAnswer ? "back" : "front");
+    const isActive = button.dataset.cardSide === (showAnswer ? "back" : "front");
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
@@ -95,7 +94,6 @@ dragZone.addEventListener("pointerdown", (event) => {
 
 dragZone.addEventListener("pointermove", (event) => {
   if (dragStartY === null) return;
-
   dragY = Math.max(0, event.clientY - dragStartY);
   downloadSheet.style.transform = `translateY(${dragY}px)`;
 });
