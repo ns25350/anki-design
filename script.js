@@ -5,9 +5,48 @@ const backdrop = document.querySelector(".backdrop");
 const getButton = document.querySelector(".get-button");
 const dragZone = document.querySelector(".drag-zone");
 const openButtons = document.querySelectorAll("[data-open-sheet]");
+const ankiCard = document.querySelector(".anki-card");
+const answerSlot = document.querySelector(".anki-answer-slot");
+const exampleList = document.querySelector(".anki-examples");
+const cardSideButtons = document.querySelectorAll("[data-card-side]");
 
 let dragStartY = null;
 let dragY = 0;
+
+function setCardSide(showAnswer) {
+  ankiCard.classList.toggle("is-answer-visible", showAnswer);
+  ankiCard.setAttribute("aria-pressed", String(showAnswer));
+  ankiCard.setAttribute(
+    "aria-label",
+    showAnswer ? "カードの表面を表示" : "カードの裏面を表示"
+  );
+  answerSlot.setAttribute("aria-hidden", String(!showAnswer));
+  exampleList.setAttribute("aria-hidden", String(!showAnswer));
+
+  cardSideButtons.forEach((button) => {
+    const isActive =
+      button.dataset.cardSide === (showAnswer ? "back" : "front");
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+cardSideButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setCardSide(button.dataset.cardSide === "back");
+  });
+});
+
+ankiCard.addEventListener("click", () => {
+  setCardSide(!ankiCard.classList.contains("is-answer-visible"));
+});
+
+ankiCard.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    setCardSide(!ankiCard.classList.contains("is-answer-visible"));
+  }
+});
 
 function setSheetControlsEnabled(enabled) {
   const tabIndex = enabled ? 0 : -1;
