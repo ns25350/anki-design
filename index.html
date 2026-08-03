@@ -3,86 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="学校新聞で紹介したAnki用カードデザインの配布ページです。">
+  <meta name="theme-color" content="#f5f5f7">
   <title>Ankiデザイン配布</title>
-
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont,
-                   "Helvetica Neue", "Noto Sans JP", sans-serif;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 60px 24px;
-      line-height: 1.8;
-      background: #f5f5f7;
-      color: #1d1d1f;
-    }
-
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 24px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.06);
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 32px;
-    }
-
-    .download {
-      display: block;
-      margin-top: 32px;
-      padding: 16px;
-      text-align: center;
-      text-decoration: none;
-      background: #0071e3;
-      color: white;
-      border-radius: 12px;
-      font-weight: bold;
-    }
-
-    .download:hover {
-      background: #0077ed;
-    }
-
-    .note {
-      margin-top: 28px;
-      font-size: 14px;
-      color: #6e6e73;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <main class="site-shell">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
 
-  <div class="card">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Anki Design ホーム">
+        <span class="mini-icon" aria-hidden="true"><span>A</span></span>
+        <span>Anki Design</span>
+      </a>
+      <button class="nav-download" type="button" data-open-sheet>入手</button>
+    </header>
 
-    <h1>Ankiデザイン</h1>
+    <section class="hero" id="top">
+      <div class="eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        学校新聞 掲載デザイン
+      </div>
 
-    <p>
-      学校新聞で紹介したAnki用デザインを
-      こちらからダウンロードできます。
-    </p>
+      <h1>
+        覚えることだけに、<br>
+        <span>集中できる。</span>
+      </h1>
 
-    <h2>特徴</h2>
+      <p class="hero-copy">
+        見やすさと使いやすさを大切にした、<br class="mobile-break">
+        Ankiのカードデザインです。
+      </p>
 
-    <ul>
-      <li>シンプルで見やすいデザイン</li>
-      <li>スマートフォン・PCで利用可能</li>
-      <li>Ankiのカードテンプレートとして利用できます</li>
-    </ul>
+      <button class="primary-button" type="button" data-open-sheet>
+        <span class="download-mark" aria-hidden="true">↓</span>
+        無料でダウンロード
+      </button>
+      <p class="compatibility">Anki Desktop・AnkiMobile・AnkiDroidに対応</p>
 
-    <a class="download"
-       href="https://github.com/user-attachments/files/30640490/anki.zip">
-      ダウンロード
-    </a>
+      <div class="card-preview" aria-label="Ankiカードのデザイン例">
+        <div class="preview-window">
+          <div class="preview-toolbar">
+            <span></span><span></span><span></span>
+            <b>anki-design</b>
+          </div>
+          <div class="study-card">
+            <p class="word">afford</p>
+            <p class="pronunciation">/əˈfɔːrd/</p>
+            <div class="meaning-line"></div>
+            <p class="meaning">〜する余裕がある</p>
+            <div class="example">
+              I can't <strong>afford</strong> a new computer.
+            </div>
+          </div>
+        </div>
+        <div class="preview-glow" aria-hidden="true"></div>
+      </div>
+    </section>
 
-    <p class="note">
-      配布版：Version 1.0
-    </p>
+    <section class="features" aria-labelledby="features-heading">
+      <div class="section-heading">
+        <p>DESIGNED FOR STUDY</p>
+        <h2 id="features-heading">毎日の暗記を、すこし心地よく。</h2>
+      </div>
 
-  </div>
+      <div class="feature-grid">
+        <article class="feature-card feature-wide">
+          <span class="feature-number">01</span>
+          <h3>視線が迷わない</h3>
+          <p>情報の強弱を整理し、単語・意味・例文を自然な順序で確認できます。</p>
+          <div class="focus-demo" aria-hidden="true"><i></i><i></i><i></i></div>
+        </article>
 
+        <article class="feature-card">
+          <span class="feature-number">02</span>
+          <h3>どの端末でも</h3>
+          <p>スマートフォンとPCの画面幅に合わせて、読みやすく表示されます。</p>
+          <div class="device-demo" aria-hidden="true">
+            <span class="laptop"></span>
+            <span class="phone"></span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-number">03</span>
+          <h3>一度読み込むだけ</h3>
+          <p>読み込み後は、カード作成時にノートタイプ「ver3.1」を選べます。</p>
+          <div class="check-demo" aria-hidden="true">✓</div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <span>Anki Design</span>
+      <span>Version 1.0</span>
+    </footer>
+
+    <div class="sheet-layer" aria-hidden="true">
+      <button
+        class="backdrop"
+        type="button"
+        aria-label="ダウンロード画面を閉じる"
+        tabindex="-1"
+      ></button>
+
+      <section
+        class="download-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="download-title"
+      >
+        <div class="drag-zone">
+          <span class="drag-handle" aria-hidden="true"></span>
+        </div>
+
+        <button
+          class="close-button"
+          type="button"
+          aria-label="閉じる"
+          tabindex="-1"
+        >×</button>
+
+        <div class="sheet-visual" aria-hidden="true">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="visual-icon"><span>A</span></div>
+          <p>DESIGNED FOR ANKI</p>
+        </div>
+
+        <div class="sheet-content">
+          <div class="app-row">
+            <div>
+              <p class="sheet-label">ANKI CARD TEMPLATE</p>
+              <h2 id="download-title">Ankiデザイン</h2>
+              <p>シンプルで、見やすいカードテンプレート</p>
+            </div>
+            <a
+              class="get-button"
+              href="https://github.com/user-attachments/files/30640490/anki.zip"
+              download
+              tabindex="-1"
+            >入手</a>
+          </div>
+
+          <div class="sheet-divider"></div>
+
+          <div class="file-row">
+            <span class="file-icon" aria-hidden="true">ZIP</span>
+            <div>
+              <span>配布ファイル</span>
+              <strong>anki.zip</strong>
+            </div>
+            <span class="version-pill">v1.0</span>
+          </div>
+
+          <ol class="steps">
+            <li>
+              <span>1</span>
+              <p><strong>ZIPファイルを解凍</strong><br>中にある「anki-design.apkg」を開きます。</p>
+            </li>
+            <li>
+              <span>2</span>
+              <p><strong>Ankiに読み込む</strong><br>「afford」のサンプルカードが追加されれば完了です。</p>
+            </li>
+            <li>
+              <span>3</span>
+              <p><strong>自分のカードを作る</strong><br>ノートタイプから「ver3.1」を選んでください。</p>
+            </li>
+          </ol>
+
+          <p class="sheet-note">最初に一度読み込めば、以後も同じデザインを使えます。</p>
+        </div>
+      </section>
+    </div>
+  </main>
 </body>
 </html>
