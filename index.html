@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="学校新聞で紹介したAnki用カードデザインの配布ページです。">
+  <meta name="description" content="学校新聞で紹介したAnkiカードデザインの配布サイトです。">
   <meta name="theme-color" content="#f5f5f7">
   <title>Ankiデザイン配布</title>
   <link rel="stylesheet" href="style.css">
@@ -47,18 +47,55 @@
       <div class="card-preview" aria-label="Ankiカードのデザイン例">
         <div class="preview-window">
           <div class="preview-toolbar">
-            <span></span><span></span><span></span>
-            <b>anki-design</b>
-          </div>
-          <div class="study-card">
-            <p class="word">afford</p>
-            <p class="pronunciation">/əˈfɔːrd/</p>
-            <div class="meaning-line"></div>
-            <p class="meaning">〜する余裕がある</p>
-            <div class="example">
-              I can't <strong>afford</strong> a new computer.
+            <div class="window-dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <b class="preview-title">実際のカードプレビュー</b>
+            <div class="preview-tabs" aria-label="カードの表示面">
+              <button class="is-active" type="button" data-card-side="front" aria-pressed="true">表面</button>
+              <button type="button" data-card-side="back" aria-pressed="false">裏面</button>
             </div>
           </div>
+
+          <div class="anki-card-stage">
+            <div class="anki-card" role="button" tabindex="0" aria-pressed="false" aria-label="カードの裏面を表示">
+              <div class="anki-divider"></div>
+
+              <div class="anki-top-area">
+                <div class="anki-front-word">afford</div>
+                <div class="anki-answer-slot" aria-hidden="true">〜する余裕がある</div>
+              </div>
+
+              <div class="anki-divider"></div>
+
+              <div class="anki-info-bar">
+                <div class="anki-info-item">
+                  <div class="anki-info-label">No.</div>
+                  <div class="anki-info-value">001</div>
+                </div>
+                <div class="anki-info-item">
+                  <div class="anki-info-label">品詞</div>
+                  <div class="anki-info-value">動詞</div>
+                </div>
+                <div class="anki-info-item">
+                  <div class="anki-info-label">LEVEL</div>
+                  <div class="anki-info-value">2</div>
+                </div>
+                <div class="anki-info-item">
+                  <div class="anki-info-label">出典</div>
+                  <div class="anki-info-value">SAMPLE</div>
+                </div>
+              </div>
+
+              <div class="anki-examples" aria-hidden="true">
+                <div class="anki-example-block">
+                  <div class="anki-example">The newspaper club can't afford to study as the deadline approaches.</div>
+                  <div class="anki-jp">締切が近づくと、新聞には勉強する余裕がない。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="preview-hint">カードをクリックして表・裏を切り替えられます</p>
         </div>
         <div class="preview-glow" aria-hidden="true"></div>
       </div>
@@ -83,8 +120,7 @@
           <h3>どの端末でも</h3>
           <p>スマートフォンとPCの画面幅に合わせて、読みやすく表示されます。</p>
           <div class="device-demo" aria-hidden="true">
-            <span class="laptop"></span>
-            <span class="phone"></span>
+            <span class="laptop"></span><span class="phone"></span>
           </div>
         </article>
 
@@ -103,29 +139,14 @@
     </footer>
 
     <div class="sheet-layer" aria-hidden="true">
-      <button
-        class="backdrop"
-        type="button"
-        aria-label="ダウンロード画面を閉じる"
-        tabindex="-1"
-      ></button>
+      <button class="backdrop" type="button" aria-label="ダウンロード画面を閉じる" tabindex="-1"></button>
 
-      <section
-        class="download-sheet"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="download-title"
-      >
+      <section class="download-sheet" role="dialog" aria-modal="true" aria-labelledby="download-title">
         <div class="drag-zone">
           <span class="drag-handle" aria-hidden="true"></span>
         </div>
 
-        <button
-          class="close-button"
-          type="button"
-          aria-label="閉じる"
-          tabindex="-1"
-        >×</button>
+        <button class="close-button" type="button" aria-label="閉じる" tabindex="-1">×</button>
 
         <div class="sheet-visual" aria-hidden="true">
           <div class="visual-orbit orbit-one"></div>
@@ -141,12 +162,10 @@
               <h2 id="download-title">Ankiデザイン</h2>
               <p>シンプルで、見やすいカードテンプレート</p>
             </div>
-            <a
-              class="get-button"
-              href="https://github.com/user-attachments/files/30640490/anki.zip"
-              download
-              tabindex="-1"
-            >入手</a>
+            <a class="get-button"
+               href="https://github.com/user-attachments/files/30640490/anki.zip"
+               download
+               tabindex="-1">入手</a>
           </div>
 
           <div class="sheet-divider"></div>
